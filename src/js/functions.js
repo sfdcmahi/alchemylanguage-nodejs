@@ -188,8 +188,8 @@ $(document).ready(function() {
     $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
       $(".error").empty();
       $('.error').show();
-      $('.error').text("There has been the following error: ");
-      $('.error').append(jqxhr.status).append(" - ");
+      $('.error').text('There has been the following error: ');
+      $('.error').append(jqxhr.status).append(' - ');
       $('.error').append(thrownError);
     });
     $(document).ajaxComplete(function() {
