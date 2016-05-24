@@ -185,8 +185,12 @@ $(document).ready(function() {
     $(document).ajaxError(function() {
       $('.error').show();
     });
-    $(document).ajaxError(function() {
-      $('.error').hide();
+    $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+      $(".error").empty();
+      $('.error').show();
+      $('.error').text("There has been the following error: ");
+      $('.error').append(jqxhr.status).append(" - ");
+      $('.error').append(thrownError);
     });
     $(document).ajaxComplete(function() {
       $('.loading').hide();
